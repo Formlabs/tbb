@@ -58,11 +58,11 @@ namespace utility{
     // std::unique_ptr is unavailable, so suppress std::auto_prt<> deprecation warning
     #pragma warning(disable: 1478)
     #endif
-    #define smart_ptr std::auto_ptr
-    // in some C++ libraries, std::swap does not work with std::auto_ptr
+    #define smart_ptr std::unique_ptr
+    // in some C++ libraries, std::swap does not work with std::unique_ptr
     template<typename T>
-    void swap( std::auto_ptr<T>& ptr1, std::auto_ptr<T>& ptr2 ) {
-        std::auto_ptr<T> tmp; tmp = ptr2; ptr2 = ptr1; ptr1 = tmp;
+    void swap( std::unique_ptr<T>& ptr1, std::unique_ptr<T>& ptr2 ) {
+        std::unique_ptr<T> tmp; tmp = ptr2; ptr2 = ptr1; ptr1 = tmp;
     }
 #endif
 
