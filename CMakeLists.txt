@@ -565,3 +565,6 @@ if (TBB_BUILD_TESTS)
   tbb_add_test (write_once_node)
   tbb_add_test (yield)
 endif ()
+
+add_win32_dll (tbb::tbbmalloc.dll ${CMAKE_CURRENT_BINARY_DIR}/tbbmalloc.dll)
+add_win32_dll (tbb::tbbmalloc_proxy.dll ${CMAKE_CURRENT_BINARY_DIR}/tbbmalloc_proxy.dll)
